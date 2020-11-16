@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FLSDMessanger</string>
+    <string name="app_name">FLSDMessenger</string>
     <string name="password_hint">Password</string>
     <string name="email_hint">Email</string>
     <string name="username_hint">Username</string>
@@ -7,4 +7,5 @@
     <string name="login_button">Login</string>
     <string name="auth_type_change_string_register">Already have an account ?</string>
     <string name="auth_type_change_string_login">Back to registration</string>
+    <string name="choose_photo_button">Choose a photo</string>
 </resources>
