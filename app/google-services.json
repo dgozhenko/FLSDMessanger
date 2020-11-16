@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "22937334930",
+    "firebase_url": "https://flsdmanager.firebaseio.com",
+    "project_id": "flsdmanager",
+    "storage_bucket": "flsdmanager.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:22937334930:android:29befa98a767466a49624b",
+        "android_client_info": {
+          "package_name": "com.example.flsdmessanger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "22937334930-iam3v0qakn8cep5asknii2649i83isk7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjOT31tOVgVzdFnJt-gcWHJSfOD0RoW-E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "22937334930-iam3v0qakn8cep5asknii2649i83isk7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
