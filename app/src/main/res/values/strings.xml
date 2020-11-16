@@ -4,5 +4,7 @@
     <string name="email_hint">Email</string>
     <string name="username_hint">Username</string>
     <string name="register_button">Register</string>
-    <string name="auth_type_change_string">Already have an account ?</string>
+    <string name="login_button">Login</string>
+    <string name="auth_type_change_string_register">Already have an account ?</string>
+    <string name="auth_type_change_string_login">Back to registration</string>
 </resources>
