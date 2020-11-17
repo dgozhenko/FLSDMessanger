@@ -6,15 +6,26 @@
     android:layout_gravity="center"
     android:background="@android:color/holo_orange_light">
 
-    <androidx.appcompat.widget.AppCompatButton
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/circle_image_view"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:civ_border_color="@color/white"
+        app:civ_border_width="2dp"
+        app:layout_constraintEnd_toEndOf="@id/choose_photo_button"
+        app:layout_constraintStart_toStartOf="@id/choose_photo_button"
+        app:layout_constraintTop_toTopOf="@id/choose_photo_button"
+        app:layout_constraintBottom_toBottomOf="@id/choose_photo_button"/>
+
+    <ImageButton
         android:id="@+id/choose_photo_button"
         style="@style/choose_photo_button_style"
         android:layout_marginTop="32dp"
-        android:text="@string/choose_photo_button"
         app:layout_constraintEnd_toEndOf="@id/password_edit_register"
         app:layout_constraintStart_toStartOf="@id/password_edit_register"
         app:layout_constraintBottom_toTopOf="@id/username_edit_register"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/choose_photo_button" />
 
     <EditText
         android:id="@+id/username_edit_register"
