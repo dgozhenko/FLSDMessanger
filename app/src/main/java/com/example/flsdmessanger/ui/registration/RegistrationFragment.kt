@@ -15,7 +15,6 @@ import com.bumptech.glide.Glide
 import com.esafirm.imagepicker.features.ImagePicker
 import com.esafirm.imagepicker.features.ReturnMode
 import com.example.flsdmessanger.databinding.RegistrationFragmentBinding
-import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.registration_fragment.*
 
 
@@ -47,13 +46,15 @@ class RegistrationFragment: Fragment() {
             val email = email_edit_register.text.toString()
             val password = password_edit_register.text.toString()
             val username = username_edit_register.text.toString()
-            val uid = FirebaseAuth.getInstance().uid
+
 
             if (email.isEmpty() || password.isEmpty() || username.isEmpty()) {
                 Toast.makeText(context, "Missing email or password", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
+            } else {
+                registrationViewMode.registerUser(email, password, selectedPhotoUri!!, username)
+                findNavController().navigate(RegistrationFragmentDirections.actionRegistrationFragmentToFeedFragment())
             }
-            registrationViewMode.registerUser(email, password, selectedPhotoUri!!, uid!!, username)
         }
         return binding.root
     }
