@@ -8,4 +8,8 @@
     <string name="auth_type_change_string_register">Already have an account ?</string>
     <string name="auth_type_change_string_login">Back to registration</string>
     <string name="choose_photo_button">Choose a photo</string>
+    <string name="menu_sign_out_string">Sign Out</string>
+    <string name="menu_new_message_string">New Message</string>
+    <string name="faceless_squad_messenger_app_name">Faceless Squad Messenger</string>
+    <string name="designed_by">Designed by Daniil Hozhenko</string>
 </resources>
