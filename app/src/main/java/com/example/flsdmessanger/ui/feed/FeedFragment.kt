@@ -2,6 +2,7 @@ package com.example.flsdmessanger.ui.feed
 
 import android.os.Bundle
 import android.view.*
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.flsdmessanger.R
@@ -12,6 +13,7 @@ class FeedFragment: Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val binding = FeedFragmentBinding.inflate(inflater)
         setHasOptionsMenu(true)
+        (activity as AppCompatActivity).supportActionBar?.title = "FLSDMessenger"
         return binding.root
     }
 
