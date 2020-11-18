@@ -23,7 +23,7 @@ class FeedFragment: Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.menu_new_message -> {
-
+                findNavController().navigate(FeedFragmentDirections.actionFeedFragmentToNewMessageFragment())
             }
 
             R.id.menu_sign_out -> {
