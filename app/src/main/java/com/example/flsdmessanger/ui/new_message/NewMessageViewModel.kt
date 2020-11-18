@@ -12,6 +12,11 @@ import com.google.firebase.database.ValueEventListener
 
 
 class NewMessageViewModel: ViewModel() {
+
+    private val _navigateToSelectedChat = MutableLiveData<User>()
+    val navigateToSelectedChat: LiveData<User>
+        get() = _navigateToSelectedChat
+
     private val _users = MutableLiveData<ArrayList<User>>()
      val users: LiveData<ArrayList<User>>
         get() = _users
@@ -40,5 +45,13 @@ class NewMessageViewModel: ViewModel() {
             }
         })
 
+    }
+
+    fun displayChat(user: User) {
+        _navigateToSelectedChat.value = user
+    }
+
+    fun displayChatComplete() {
+        _navigateToSelectedChat.value = null
     }
 }

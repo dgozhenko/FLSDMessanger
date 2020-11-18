@@ -10,7 +10,7 @@ import com.example.flsdmessanger.R
 import com.example.flsdmessanger.data.User
 import de.hdodenhof.circleimageview.CircleImageView
 
-class NewMessageAdapter: RecyclerView.Adapter<NewMessageAdapter.ViewHolder>() {
+class NewMessageAdapter(val onClickListener: OnClickListener): RecyclerView.Adapter<NewMessageAdapter.ViewHolder>() {
     private var list: List<User> = ArrayList()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflatedView = LayoutInflater.from(parent.context).inflate(R.layout.new_message_recycle_item, parent, false)
@@ -18,6 +18,9 @@ class NewMessageAdapter: RecyclerView.Adapter<NewMessageAdapter.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.itemView.setOnClickListener {
+            onClickListener.onClick(list[position])
+        }
         holder.bindItems(list[position])
     }
 
@@ -41,5 +44,9 @@ class NewMessageAdapter: RecyclerView.Adapter<NewMessageAdapter.ViewHolder>() {
                 .load(user.profileImage)
                 .into(userImage)
         }
+    }
+
+    class OnClickListener(val clickListener: (user: User) -> Unit) {
+        fun onClick(user: User) = clickListener(user)
     }
 }

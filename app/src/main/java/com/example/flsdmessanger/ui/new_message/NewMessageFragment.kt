@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.flsdmessanger.databinding.NewMessageFragmentBinding
@@ -22,12 +23,22 @@ class NewMessageFragment: Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        val adapter = NewMessageAdapter()
+        val adapter = NewMessageAdapter(NewMessageAdapter.OnClickListener {
+            newMessageViewModel.displayChat(it)
+        })
         recycler_view_new_message.layoutManager = LinearLayoutManager(requireContext())
         recycler_view_new_message.adapter = adapter
         recycler_view_new_message.addItemDecoration(DividerItemDecoration(recycler_view_new_message.context, DividerItemDecoration.VERTICAL))
         newMessageViewModel.users.observe(viewLifecycleOwner, {
             adapter.setUser(it)
+            progress_bar_new_message.visibility = View.GONE
+        })
+
+        newMessageViewModel.navigateToSelectedChat.observe(viewLifecycleOwner, {
+            if (null != it) {
+                this.findNavController().navigate(NewMessageFragmentDirections.actionNewMessageFragmentToChatFragment(it))
+                newMessageViewModel.displayChatComplete()
+            }
         })
     }
 }
