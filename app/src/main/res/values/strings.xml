@@ -12,4 +12,6 @@
     <string name="menu_new_message_string">New Message</string>
     <string name="faceless_squad_messenger_app_name">Faceless Squad Messenger</string>
     <string name="designed_by">Designed by Daniil Hozhenko</string>
+    <string name="send_button">Send</string>
+    <string name="enter_a_message_hint">Enter a message</string>
 </resources>
